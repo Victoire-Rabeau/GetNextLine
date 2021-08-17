@@ -7,7 +7,7 @@
 
 #include "get_next_line.h"
 
-int my_line_len(char const *str)
+static int my_line_len(char const *str)
 {
     int i = 0;
 
@@ -15,7 +15,7 @@ int my_line_len(char const *str)
     return i;
 }
 
-char *read_file(int fd, char *buff)
+static char *read_file(int fd, char *buff)
 {
     int offset = 0;
     int len = 1;
@@ -28,7 +28,7 @@ char *read_file(int fd, char *buff)
     return buff;
 }
 
-char *string_to_array(char *buff, int len)
+static char *string_to_array(char *buff, int len)
 {
     char *str = malloc(sizeof(char) * len + 1);
     int i = 0;
@@ -44,7 +44,7 @@ char *string_to_array(char *buff, int len)
     return str;
 }
 
-char **fill_buffer(char *buff)
+static char **fill_buffer(char *buff)
 {
     char **buffer;
     int y = 1;
